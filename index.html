@@ -101,22 +101,36 @@
 <script src="./image-slot.js"></script>
 <style>
 html{scroll-behavior:smooth}
-body{margin:0;background:#0b0b0c;color:#fff;font-family:'Rubik',sans-serif}
+body{margin:0;background:#0b0b0c;color:#fff;font-family:'Rubik',sans-serif;overflow-x:hidden}
 a{color:#F7941D;text-decoration:none}
 a:hover{color:#FFE600}
 *{box-sizing:border-box}
+img{max-width:100%}
+
+/* --- Responsive: tablet y móvil --- */
+@media (max-width:768px){
+  .nav{height:auto !important;}
+  .nav-inner{flex-wrap:wrap;justify-content:center !important;padding:12px 16px !important;gap:12px !important;}
+  .nav-links{width:100%;justify-content:center;gap:18px !important;font-size:15px !important;}
+  .sec-pad{padding-top:56px !important;padding-bottom:56px !important;}
+}
+@media (max-width:480px){
+  .nav-links{gap:14px !important;font-size:14px !important;}
+  .sec-pad{padding-left:16px !important;padding-right:16px !important;}
+  .hero-pad{padding:48px 16px 44px !important;}
+}
 </style>
 </helmet>
 
 <div style="min-height:100vh;background:#0b0b0c;">
 
-  <nav style="position:sticky;top:0;z-index:20;height:80px;background:rgba(11,11,12,0.94);backdrop-filter:blur(8px);border-bottom:1px solid #222;">
-    <div style="max-width:1200px;margin:0 auto;height:100%;padding:0 24px;display:flex;align-items:center;justify-content:space-between;gap:16px;">
+  <nav class="nav" style="position:sticky;top:0;z-index:20;height:80px;background:rgba(11,11,12,0.94);backdrop-filter:blur(8px);border-bottom:1px solid #222;">
+    <div class="nav-inner" style="max-width:1200px;margin:0 auto;height:100%;padding:0 24px;display:flex;align-items:center;justify-content:space-between;gap:16px;">
       <a href="#inicio" style="display:flex;align-items:center;gap:12px;color:#fff;">
         <img src="assets/logo-circulo.png" alt="Sublimango" style="width:48px;height:48px;border-radius:50%;"></img>
         <span style="font-family:'Rubik Mono One',monospace;font-size:16px;letter-spacing:0.04em;">SUBLIMANGO</span>
       </a>
-      <div style="display:flex;align-items:center;gap:28px;font-family:'Quicksand',sans-serif;font-weight:600;font-size:16px;flex-wrap:wrap;">
+      <div class="nav-links" style="display:flex;align-items:center;gap:28px;font-family:'Quicksand',sans-serif;font-weight:600;font-size:16px;flex-wrap:wrap;">
         <a href="#servicios" style="color:#e6e6e6;" style-hover="color:#FFE600;">Servicios</a>
         <a href="#sucursales" style="color:#e6e6e6;" style-hover="color:#FFE600;">Sucursales</a>
         <a href="#trabajos" style="color:#e6e6e6;" style-hover="color:#FFE600;">Trabajos</a>
@@ -126,7 +140,7 @@ a:hover{color:#FFE600}
   </nav>
 
   <header id="inicio" data-screen-label="Hero" style="position:relative;overflow:hidden;">
-    <div style="max-width:1200px;margin:0 auto;padding:72px 24px 64px;display:grid;grid-template-columns:repeat(auto-fit,minmax(min(100%,440px),1fr));gap:48px;align-items:center;">
+    <div class="hero-pad" style="max-width:1200px;margin:0 auto;padding:72px 24px 64px;display:grid;grid-template-columns:repeat(auto-fit,minmax(min(100%,440px),1fr));gap:48px;align-items:center;">
       <div style="display:flex;flex-direction:column;gap:24px;">
         <div style="display:flex;gap:6px;">
           <span style="width:36px;height:6px;border-radius:3px;background:#00AEEF;"></span>
@@ -190,7 +204,7 @@ a:hover{color:#FFE600}
   </section>
 
   <section id="servicios" data-screen-label="Servicios" style="background:#f4f4f4;color:#111827;">
-    <div style="max-width:1200px;margin:0 auto;padding:88px 24px;display:flex;flex-direction:column;gap:40px;">
+    <div class="sec-pad" style="max-width:1200px;margin:0 auto;padding:88px 24px;display:flex;flex-direction:column;gap:40px;">
       <div style="display:flex;justify-content:space-between;align-items:flex-end;gap:24px;flex-wrap:wrap;">
         <div style="display:flex;flex-direction:column;gap:12px;max-width:620px;">
           <span style="font-family:'Quicksand',sans-serif;font-weight:700;font-size:13px;letter-spacing:0.08em;text-transform:uppercase;color:#4b5563;">Servicios</span>
@@ -227,7 +241,7 @@ a:hover{color:#FFE600}
   </section>
 
   <section data-screen-label="Cómo funciona DTF" style="background:#0b0b0c;">
-    <div style="max-width:1200px;margin:0 auto;padding:88px 24px;display:grid;grid-template-columns:repeat(auto-fit,minmax(min(100%,420px),1fr));gap:48px;align-items:center;">
+    <div class="sec-pad" style="max-width:1200px;margin:0 auto;padding:88px 24px;display:grid;grid-template-columns:repeat(auto-fit,minmax(min(100%,420px),1fr));gap:48px;align-items:center;">
       <img src="assets/flyer-dtf.png" alt="Flyer de maquila DTF Sublimango" style="width:100%;max-width:420px;justify-self:center;border-radius:12px;display:block;"></img>
       <div style="display:flex;flex-direction:column;gap:32px;">
         <div style="display:flex;flex-direction:column;gap:12px;">
@@ -253,7 +267,7 @@ a:hover{color:#FFE600}
   </section>
 
   <section id="sucursales" data-screen-label="Sucursales" style="background:#f4f4f4;color:#111827;">
-    <div style="max-width:1200px;margin:0 auto;padding:88px 24px;display:flex;flex-direction:column;gap:40px;">
+    <div class="sec-pad" style="max-width:1200px;margin:0 auto;padding:88px 24px;display:flex;flex-direction:column;gap:40px;">
       <div style="display:flex;flex-direction:column;gap:12px;">
         <span style="font-family:'Quicksand',sans-serif;font-weight:700;font-size:13px;letter-spacing:0.08em;text-transform:uppercase;color:#4b5563;">Sucursales</span>
         <h2 style="font-family:'Rubik Mono One',monospace;font-size:clamp(26px,3.4vw,40px);line-height:1.15;margin:0;color:#111827;">Visítanos.</h2>
@@ -284,7 +298,7 @@ a:hover{color:#FFE600}
   </section>
 
   <section id="trabajos" data-screen-label="Trabajos" style="background:#0b0b0c;">
-    <div style="max-width:1200px;margin:0 auto;padding:88px 24px;display:flex;flex-direction:column;gap:40px;">
+    <div class="sec-pad" style="max-width:1200px;margin:0 auto;padding:88px 24px;display:flex;flex-direction:column;gap:40px;">
       <div style="display:flex;flex-direction:column;gap:12px;">
         <span style="font-family:'Quicksand',sans-serif;font-weight:700;font-size:13px;letter-spacing:0.08em;text-transform:uppercase;color:#FFE600;">Trabajos recientes</span>
         <h2 style="font-family:'Rubik Mono One',monospace;font-size:clamp(26px,3.4vw,40px);line-height:1.15;margin:0;color:#fff;">Hecho en Sublimango.</h2>
@@ -319,7 +333,7 @@ a:hover{color:#FFE600}
   </section>
 
   <section id="cotizar" data-screen-label="Cotizar" style="background:#FFE600;color:#0b0b0c;">
-    <div style="max-width:1200px;margin:0 auto;padding:88px 24px;display:grid;grid-template-columns:repeat(auto-fit,minmax(min(100%,400px),1fr));gap:48px;align-items:start;">
+    <div class="sec-pad" style="max-width:1200px;margin:0 auto;padding:88px 24px;display:grid;grid-template-columns:repeat(auto-fit,minmax(min(100%,400px),1fr));gap:48px;align-items:start;">
       <div style="display:flex;flex-direction:column;gap:16px;">
         <h2 style="font-family:'Rubik Mono One',monospace;font-size:clamp(28px,4vw,48px);line-height:1.1;margin:0;color:#0b0b0c;">Cotiza por WhatsApp.</h2>
         <p style="font-size:18px;line-height:1.6;margin:0;color:#1f2937;max-width:460px;">Llena tus datos y te abrimos el chat con la sucursal correcta, con tu mensaje ya escrito.</p>
