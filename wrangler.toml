@@ -4,4 +4,5 @@ compatibility_date = "2026-11-13"
 # Sirve esta carpeta como sitio estático (index.html en la raíz).
 [assets]
 directory = "./"
-not_found_handling = "single-page-application"
+# Rutas inexistentes -> 404.html con status HTTP 404 (no soft-404 con la home)
+not_found_handling = "404-page"
