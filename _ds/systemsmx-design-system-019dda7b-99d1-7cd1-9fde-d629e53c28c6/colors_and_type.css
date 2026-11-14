@@ -1,0 +1,269 @@
+/**
+ * SystemsMX Design Tokens
+ * colors_and_type.css
+ *
+ * Source: systemsmx.com, FernandoDELREAL/proyecto-final-cafeteria
+ * Typography: Rubik Mono One (display), Rubik (body), Quicksand (ui/nav)
+ */
+
+@import url('https://fonts.googleapis.com/css2?family=Rubik+Mono+One&family=Rubik:wght@300;400;500;700&family=Quicksand:wght@400;500;600;700&display=swap');
+
+/* ─────────────────────────────────────────
+   COLOR PRIMITIVES
+───────────────────────────────────────── */
+:root {
+  /* Brand Blue Scale */
+  --color-brand-950: #02111e;
+  --color-brand-900: #051e30;
+  --color-brand-800: #0a3d62;
+  --color-brand-700: #024a7a;
+  --color-brand-600: #0a5f94;
+  --color-brand-500: #1a7fad;
+  --color-brand-400: #4aa3cc;
+  --color-brand-300: #add8e6;
+  --color-brand-200: #d2e2ee;
+  --color-brand-100: #eaf3f9;
+  --color-brand-50:  #f5f9fc;
+
+  /* Neutral Scale */
+  --color-neutral-950: #080f14;
+  --color-neutral-900: #111827;
+  --color-neutral-800: #1f2937;
+  --color-neutral-700: #374151;
+  --color-neutral-600: #4b5563;
+  --color-neutral-500: #6b7280;
+  --color-neutral-400: #9ca3af;
+  --color-neutral-300: #d1d5db;
+  --color-neutral-200: #e5e7eb;
+  --color-neutral-100: #f3f4f6;
+  --color-neutral-50:  #f9fafb;
+
+  /* Semantic */
+  --color-success-700: #065f46;
+  --color-success-500: #10b981;
+  --color-success-100: #d1fae5;
+
+  --color-warning-700: #92400e;
+  --color-warning-500: #f59e0b;
+  --color-warning-100: #fef3c7;
+
+  --color-error-700:   #991b1b;
+  --color-error-500:   #ef4444;
+  --color-error-100:   #fee2e2;
+
+  --color-info-700:    #1d4ed8;
+  --color-info-500:    #3b82f6;
+  --color-info-100:    #dbeafe;
+
+  /* ─────────────────────────────────────────
+     SEMANTIC ALIASES
+  ───────────────────────────────────────── */
+
+  /* Foreground */
+  --fg-primary:   var(--color-neutral-900);   /* Main body text */
+  --fg-secondary: var(--color-neutral-600);   /* Secondary / muted */
+  --fg-tertiary:  var(--color-neutral-400);   /* Placeholder / disabled */
+  --fg-inverted:  #ffffff;                    /* Text on dark backgrounds */
+  --fg-brand:     var(--color-brand-700);     /* Brand-colored text */
+  --fg-accent:    var(--color-brand-300);     /* Section titles on dark bg */
+
+  /* Backgrounds */
+  --bg-page:      #f4f4f4;                    /* App page background */
+  --bg-page-dark: var(--color-brand-700);     /* Dark mode page (POS consumer) */
+  --bg-surface:   #ffffff;                    /* Cards, modals */
+  --bg-surface-dark: #000305;                 /* Dark cards */
+  --bg-navbar:    var(--color-brand-200);     /* Light navbar */
+  --bg-navbar-dark: var(--color-brand-800);   /* Dark/admin navbar */
+  --bg-banner:    var(--color-brand-800);     /* Admin banners */
+
+  /* Border */
+  --border-default: var(--color-neutral-300);
+  --border-focus:   var(--color-brand-500);
+
+  /* Interaction */
+  --interactive-primary:       var(--color-brand-700);
+  --interactive-primary-hover: var(--color-brand-800);
+  --interactive-success:       var(--color-success-500);
+  --interactive-success-hover: var(--color-success-700);
+  --interactive-danger:        var(--color-error-500);
+  --interactive-danger-hover:  var(--color-error-700);
+
+  /* Shadows */
+  --shadow-card:   0 4px 8px rgba(0, 0, 0, 0.10);
+  --shadow-modal:  0 0 10px rgba(0, 0, 0, 0.10);
+  --shadow-navbar: 0 2px 8px rgba(0, 0, 0, 0.12);
+
+  /* Radii */
+  --radius-sm:  6px;    /* inputs, buttons */
+  --radius-md:  10px;   /* cards, containers */
+  --radius-lg:  12px;   /* modals, sheets */
+
+  /* Spacing scale */
+  --space-1:  4px;
+  --space-2:  8px;
+  --space-3: 12px;
+  --space-4: 16px;
+  --space-5: 20px;
+  --space-6: 24px;
+  --space-8: 32px;
+  --space-10: 40px;
+  --space-12: 48px;
+  --space-16: 64px;
+  --space-20: 80px;    /* Navbar height offset */
+
+  /* ─────────────────────────────────────────
+     TYPOGRAPHY PRIMITIVES
+  ───────────────────────────────────────── */
+
+  /* Font Families */
+  --font-display: 'Rubik Mono One', 'Courier New', monospace;
+  --font-body:    'Rubik', 'Segoe UI', sans-serif;
+  --font-ui:      'Quicksand', 'Trebuchet MS', sans-serif;
+
+  /* Font Sizes */
+  --text-xs:   11px;
+  --text-sm:   13px;
+  --text-base: 15px;
+  --text-md:   16px;
+  --text-lg:   18px;
+  --text-xl:   20px;
+  --text-2xl:  24px;
+  --text-3xl:  30px;
+  --text-4xl:  36px;
+  --text-5xl:  48px;
+
+  /* Line Heights */
+  --leading-tight:  1.2;
+  --leading-snug:   1.35;
+  --leading-normal: 1.5;
+  --leading-loose:  1.75;
+
+  /* Letter Spacing */
+  --tracking-tight:  -0.01em;
+  --tracking-normal:  0;
+  --tracking-wide:    0.04em;
+  --tracking-widest:  0.08em;
+}
+
+/* ─────────────────────────────────────────
+   SEMANTIC TYPOGRAPHY ELEMENTS
+───────────────────────────────────────── */
+
+body {
+  font-family: var(--font-body);
+  font-size: var(--text-base);
+  font-weight: 400;
+  line-height: var(--leading-normal);
+  color: var(--fg-primary);
+  -webkit-font-smoothing: antialiased;
+  text-wrap: pretty;
+}
+
+/* Headings — Rubik Mono One for display, Rubik for in-body */
+h1, .h1 {
+  font-family: var(--font-display);
+  font-size: var(--text-4xl);
+  line-height: var(--leading-tight);
+  letter-spacing: var(--tracking-wide);
+  color: var(--fg-accent);   /* light blue on dark bg by default */
+  margin: 0 0 var(--space-6);
+}
+
+h2, .h2 {
+  font-family: var(--font-body);
+  font-size: var(--text-3xl);
+  font-weight: 700;
+  line-height: var(--leading-snug);
+  color: var(--fg-primary);
+  margin: 0 0 var(--space-5);
+}
+
+h3, .h3 {
+  font-family: var(--font-body);
+  font-size: var(--text-xl);
+  font-weight: 700;
+  line-height: var(--leading-snug);
+  color: var(--fg-primary);
+  margin: 0 0 var(--space-4);
+}
+
+h4, .h4 {
+  font-family: var(--font-body);
+  font-size: var(--text-lg);
+  font-weight: 500;
+  color: var(--fg-primary);
+  margin: 0 0 var(--space-3);
+}
+
+h5, .h5 {
+  font-family: var(--font-body);
+  font-size: var(--text-md);
+  font-weight: 500;
+  color: var(--fg-primary);
+  margin: 0 0 var(--space-2);
+}
+
+p {
+  font-family: var(--font-body);
+  font-size: var(--text-base);
+  font-weight: 400;
+  line-height: var(--leading-normal);
+  color: var(--fg-primary);
+  margin: 0 0 var(--space-4);
+}
+
+.lead {
+  font-size: var(--text-lg);
+  font-weight: 300;
+  line-height: var(--leading-loose);
+}
+
+small, .small {
+  font-size: var(--text-sm);
+  color: var(--fg-secondary);
+}
+
+code, pre, .mono {
+  font-family: var(--font-display);
+  font-size: var(--text-sm);
+  background: var(--color-brand-100);
+  padding: 2px 6px;
+  border-radius: 4px;
+}
+
+label, .label {
+  font-family: var(--font-ui);
+  font-size: var(--text-sm);
+  font-weight: 600;
+  color: var(--fg-secondary);
+  letter-spacing: var(--tracking-wide);
+  text-transform: uppercase;
+}
+
+/* Nav items */
+.nav-item, .nav-link {
+  font-family: var(--font-ui);
+  font-size: var(--text-md);
+  font-weight: 500;
+}
+
+/* Section title (used in alumno.html) */
+.section-title {
+  font-family: var(--font-display);
+  font-size: var(--text-3xl);
+  letter-spacing: var(--tracking-wide);
+  color: var(--fg-accent);
+  text-align: center;
+}
+
+/* Banner (used in admin.html) */
+.banner-title {
+  font-family: var(--font-display);
+  font-size: var(--text-3xl);
+  letter-spacing: var(--tracking-widest);
+  text-transform: uppercase;
+  color: #a3d5f7;
+  background-color: var(--bg-banner);
+  padding: var(--space-8) var(--space-4);
+  text-align: center;
+}

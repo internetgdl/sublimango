@@ -1,0 +1,5 @@
+.DS_Store
+*.zip
+
+# Imágenes sueltas de Facebook en la raíz (no son parte del sitio)
+/*.jpg

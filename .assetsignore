@@ -1,0 +1,8 @@
+.git
+.github
+.gitignore
+.assetsignore
+wrangler.toml
+*.zip
+.DS_Store
+Sublimango Sitio Web.dc.html
