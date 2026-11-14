@@ -1,8 +1,10 @@
 name = "sublimango"
 compatibility_date = "2026-11-13"
+main = "worker.js"
 
 # Sirve esta carpeta como sitio estático (index.html en la raíz).
 [assets]
 directory = "./"
+binding = "ASSETS"
 # Rutas inexistentes -> 404.html con status HTTP 404 (no soft-404 con la home)
 not_found_handling = "404-page"

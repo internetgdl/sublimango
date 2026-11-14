@@ -6,6 +6,9 @@ node_modules
 package.json
 package-lock.json
 wrangler.toml
+worker.js
+_headers
+_redirects
 *.log
 *.zip
 .DS_Store
