@@ -379,14 +379,23 @@ img{max-width:100%}
               <h3 style="font-size:24px;font-weight:700;margin:0;color:#111827;">{{ br.name }}</h3>
               <div style="display:flex;flex-direction:column;gap:10px;font-size:15px;color:#374151;">
                 <span style="display:flex;gap:10px;"><i class="bi bi-geo-alt-fill" style="color:#F7941D;"></i>{{ br.address }}</span>
-                <span style="display:flex;gap:10px;"><i class="bi bi-telephone-fill" style="color:#F7941D;"></i>{{ br.phone }}</span>
+                <sc-if value="{{ br.phone }}" hint-placeholder-val="{{ true }}">
+                  <span style="display:flex;gap:10px;"><i class="bi bi-telephone-fill" style="color:#F7941D;"></i>{{ br.phone }}</span>
+                </sc-if>
                 <sc-if value="{{ br.email }}" hint-placeholder-val="{{ false }}">
                   <span style="display:flex;gap:10px;"><i class="bi bi-envelope-fill" style="color:#F7941D;"></i>{{ br.email }}</span>
                 </sc-if>
               </div>
               <div style="display:flex;gap:12px;flex-wrap:wrap;font-family:'Quicksand',sans-serif;font-weight:700;font-size:15px;">
-                <a href="{{ br.wa }}" target="_blank" style="display:flex;align-items:center;gap:8px;background:#25D366;color:#0b0b0c;padding:12px 16px;border-radius:6px;" style-hover="background:#1fb857;color:#0b0b0c;"><i class="bi bi-whatsapp"></i>WhatsApp</a>
-                <a href="{{ br.fb }}" target="_blank" style="display:flex;align-items:center;gap:8px;border:1px solid #d1d5db;color:#111827;padding:12px 16px;border-radius:6px;" style-hover="border-color:#1877F2;color:#1877F2;"><i class="bi bi-facebook"></i>Facebook</a>
+                <sc-if value="{{ br.wa }}" hint-placeholder-val="{{ true }}">
+                  <a href="{{ br.wa }}" target="_blank" style="display:flex;align-items:center;gap:8px;background:#25D366;color:#0b0b0c;padding:12px 16px;border-radius:6px;" style-hover="background:#1fb857;color:#0b0b0c;"><i class="bi bi-whatsapp"></i>WhatsApp</a>
+                </sc-if>
+                <sc-if value="{{ br.fb }}" hint-placeholder-val="{{ true }}">
+                  <a href="{{ br.fb }}" target="_blank" style="display:flex;align-items:center;gap:8px;border:1px solid #d1d5db;color:#111827;padding:12px 16px;border-radius:6px;" style-hover="border-color:#1877F2;color:#1877F2;"><i class="bi bi-facebook"></i>Facebook</a>
+                </sc-if>
+                <sc-if value="{{ br.page }}" hint-placeholder-val="{{ true }}">
+                  <a href="{{ br.page }}" style="display:flex;align-items:center;gap:8px;border:1px solid #d1d5db;color:#111827;padding:12px 16px;border-radius:6px;" style-hover="border-color:#F7941D;color:#F7941D;"><i class="bi bi-geo-alt"></i>Ver sucursal</a>
+                </sc-if>
               </div>
             </div>
           </article>
@@ -501,6 +510,7 @@ const BRANCHES = {
     phone: '33 3302 4044', email: '',
     wa: 'https://wa.me/523333024044',
     fb: 'https://www.facebook.com/profile.php?id=100063491794032',
+    page: '/sucursal-san-juan-bosco',
     map: 'https://maps.google.com/maps?q=Rita%20Perez%20de%20Moreno%20433%20San%20Juan%20Bosco%2044730%20Guadalajara&z=16&output=embed',
     services: [
       { icon: 'bi-printer-fill', title: 'Maquila DTF por metro', desc: 'Impresión a 58 cm de ancho, sin límite de colores. Entrega el mismo día.' },
@@ -509,6 +519,28 @@ const BRANCHES = {
       { icon: 'bi-layers-fill', title: 'Transfers listos para planchar', desc: 'Sin cortar ni depilar. Funciona en cualquier tela y color.' }
     ]
   },
+  sublimacion: {
+    key: 'sub', short: 'Sublimación', tag: 'Sublimación', name: 'Sublimango Sublimación',
+    desc: 'Sublimación de tazas, termos, playeras de poliéster y artículos personalizados.',
+    address: 'C. Rita Pérez de Moreno 454-A, Col. San Juan Bosco, 44730 Guadalajara, Jal.',
+    phone: '', email: '',
+    wa: '',
+    fb: 'https://www.facebook.com/profile.php?id=100063491794032',
+    page: '/sucursal-san-juan-bosco',
+    map: 'https://maps.google.com/maps?q=Rita%20Perez%20de%20Moreno%20454-A%20San%20Juan%20Bosco%2044730%20Guadalajara&z=16&output=embed',
+    services: []
+  },
+  nueve: {
+    key: 'nueve', short: 'Nueve Esquinas', tag: 'DTF, sublimación y publicidad', name: 'Sublimango Las Nueve Esquinas',
+    desc: 'DTF, sublimación y material publicitario en el Centro de Guadalajara.',
+    address: 'Ocampo 340, Col. Las Nueve Esquinas, Guadalajara, Jal.',
+    phone: '33 2033 9909', email: '',
+    wa: 'https://wa.me/523320339909',
+    fb: 'https://www.facebook.com/profile.php?id=100063491794032',
+    page: '/sucursal-nueve-esquinas',
+    map: 'https://maps.google.com/maps?q=Ocampo%20340%20Nueve%20Esquinas%20Guadalajara%20Jalisco&z=16&output=embed',
+    services: []
+  },
   pub: {
     key: 'pub', short: 'Zapopan Centro', tag: 'Material publicitario', name: 'Sublimango Zapopan',
     desc: 'Todo lo que tu negocio necesita para darse a conocer: impresos, lonas, rotulación y artículos promocionales.',
@@ -516,6 +548,7 @@ const BRANCHES = {
     phone: '33 1754 0340', email: 'dtf.zapopan@gmail.com',
     wa: 'https://wa.me/523317540340',
     fb: 'https://www.facebook.com/dtf.zapopan',
+    page: '/sucursal-zapopan',
     map: 'https://maps.google.com/maps?q=Zaragoza%2013%20Zapopan%20Centro%2045100%20Jalisco&z=16&output=embed',
     services: [
       { icon: 'bi-easel2-fill', title: 'Lonas y banners', desc: 'Gran formato para fachadas, eventos y puntos de venta.' },
@@ -539,7 +572,7 @@ class Component extends DCLogic {
       (this.state.msg ? ` ${this.state.msg}` : '');
     const heroMascot = (this.props.heroArt ?? 'Mascota') === 'Mascota';
     return {
-      b, branches: [BRANCHES.dtf, BRANCHES.pub],
+      b, branches: [BRANCHES.dtf, BRANCHES.sublimacion, BRANCHES.nueve, BRANCHES.pub],
       heroMascot, heroLogo: !heroMascot,
       tabDtfBg: isDtf ? '#0b0b0c' : 'transparent', tabDtfColor: isDtf ? '#FFE600' : '#4b5563',
       tabPubBg: !isDtf ? '#0b0b0c' : 'transparent', tabPubColor: !isDtf ? '#FFE600' : '#4b5563',
